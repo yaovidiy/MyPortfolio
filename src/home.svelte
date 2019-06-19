@@ -12,36 +12,40 @@
 </style>
 
 <script>
-    import { texts, lang } from './stores.js';
+    import { texts, lang, currPage } from './stores.js';
     import { onMount } from 'svelte';
+    
 
     onMount(()=>{
         let currText = 0, textPos = 0;
         let mainText = '';
 
+        
         function typing(text, pos){
             console.log("get here");
-            let getText = $texts.home.welcom[$lang][text];
-            let allTexts = $texts.home.welcom[$lang];
-            let input = document.querySelector("#typing");
-            if ( getText.length > pos ){
-                input.innerHTML += getText[pos];
-                pos++;
-                setTimeout(() => {
-                    typing(text, pos);                    
-                }, 50);
-            }
-            else if ( (allTexts.length - 1) > text ){
-                pos = 0;
-                text++;
-                setTimeout(() => {
-                    input.innerHTML = '';
-                    typing(text,pos);                    
-                }, 1000);
-            }
-            else{
-                input.innerHTML = `${$texts.home.welcom[$lang][text]}`
-                console.log("all printed", text, pos, allTexts, getText);
+            if ( $currPage === 'home' ){
+                let getText = $texts.home.welcom[$lang][text];
+                let allTexts = $texts.home.welcom[$lang];
+                let input = document.querySelector("#typing");
+                if ( getText.length > pos ){
+                    input.innerHTML += getText[pos];
+                    pos++;
+                    setTimeout(() => {
+                        typing(text, pos);                    
+                    }, 50);
+                }
+                else if ( (allTexts.length - 1) > text ){
+                    pos = 0;
+                    text++;
+                    setTimeout(() => {
+                        input.innerHTML = '';
+                        typing(text,pos);                    
+                    }, 1000);
+                }
+                else{
+                    input.innerHTML = `${$texts.home.welcom[$lang][text]}`
+                    console.log("all printed", text, pos, allTexts, getText);
+                }
             }
         }
         typing(currText, textPos);

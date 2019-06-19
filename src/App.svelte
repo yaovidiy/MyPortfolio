@@ -2,6 +2,9 @@
 	import loader from './loader.svelte';
 	import menu from './menu.svelte';
 	import home from './home.svelte';
+	import about from './about.svelte';
+	import contact from './contacts.svelte';
+	import { currPage } from './stores.js';
 
 	export let name;
 </script>
@@ -10,6 +13,12 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 </svelte:head>
 <svelte:component this={menu}></svelte:component>
-<svelte:component this={home}></svelte:component>
+{#if $currPage === 'home'}
+	<svelte:component this={home}></svelte:component>
+{:else if $currPage === 'about'}
+	<svelte:component this={about}></svelte:component>
+{:else if $currPage === 'contact'}
+	<svelte:component this={contact}></svelte:component>
+{/if}
 
 

@@ -106,6 +106,64 @@ export const texts = writable({
 			ua:'Моє резюме',
 			ru:'Мое резюме',
 		}
+	},
+	about:{
+		text:{
+			en:`<p>
+					Okey, little information about me.
+				</p>
+				<p>
+					My name is Yaroslav. I worked in Obliksoft company on position of the junior front-end.
+					<br>
+					I worked there for 10 month
+					<br>
+					I started as there as junior specialist, and supported already exsiting projects written on JavaScript
+					and REST API.
+					<br>
+					At the end of my time there I was creating my own apps for Bitrix24 platform using already React/Redux 
+					and Webpack for compiling projects
+				</p>`,
+			ua:`<p>
+					Ну що, трохи інформації про мене.
+				</p>
+				<p>
+					Моє ім'я Ярослав. Я працював в компанії Обліксофт на позиції  junior front-end.
+					<br>
+					Я пропрацював там 10 місяців
+					<br>
+					Я починав як молодший спеціаліст та підтримував вже існуючі проекти написанні на JavaScript та 
+					з використанням REST API.
+					<br>
+					Під кінець своєї роботи в компанії я вже розробляв свої застосунки для платформи Bitrix24 використовуючи
+					React/Redux та Webpack для компіляції проектів
+				</p>`,
+			ru:`<p>
+					Okey, little information about me.
+				</p>
+				<p>
+					My name is Yaroslav. I worked in Obliksoft company on position of the junior front-end.
+					<br>
+					I worked there for 10 month
+					<br>
+					I started as there as junior specialist, and supported already exsiting projects written on JavaScript
+					and REST API.
+					<br>
+					At the end of my time there I was creating my own apps for Bitrix platform using already React/Redux 
+					and Webpack for compiling projects
+				</p>`,
+		},
+		cv:{
+			ru:'Скачать резюме',
+			en:'Download my CV',
+			ua:'Завантажити резюме',
+		},
+		projects:{
+			ru:'Посмотрите мои работы',
+			ua:'Подивіться мої роботи',
+			en:'Look for my work',
+		}
+
+
 	}
 })
 
